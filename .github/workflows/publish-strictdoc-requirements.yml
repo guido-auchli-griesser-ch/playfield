@@ -38,10 +38,6 @@ jobs:
             docs/requirements/strictdoc \
             --output-dir public
 
-       - name: Show output
-         run: |
-           find public
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
