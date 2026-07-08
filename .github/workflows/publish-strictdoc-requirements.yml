@@ -1,11 +1,11 @@
-name: Publish requirements with strictdoc
+name: Publish requirements with StrictDoc
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'docs/requirements/strictdoc/**/*.sdoc'
+      - 'docs/requirements/strictdoc/**/*.*'
 
 permissions:
   contents: read
@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -36,12 +36,12 @@ jobs:
         run: |
           strictdoc export \
             docs/requirements/strictdoc \
-            --output-dir site
+            --output-dir public
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: site
+          path: public
 
   deploy:
     needs: build
@@ -53,4 +53,4 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
