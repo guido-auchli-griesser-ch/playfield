@@ -19,7 +19,7 @@ ELEMENTS:
     TYPE: String
     REQUIRED: True
   - TITLE: TYPE
-    TYPE: SingleChoice(Functional, Non-Functional)
+    TYPE: SingleChoice(Functional, Non-Functional, Constraint)
     REQUIRED: True
   - TITLE: COMPONENT
     TYPE: String
